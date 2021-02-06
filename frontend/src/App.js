@@ -11,21 +11,14 @@ export default function App(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [comfirmPassword, setComfirmPassword] = useState('')
-  const [admin, setAdmin] = useState(false)
-  const [opacity, setOpacity] = useState('0')
 
-  const selectInputCheckbox=()=>{
-    opacity === '0' ? setOpacity('1') : setOpacity('0')
-    opacity === '0' ? setAdmin(true) : setAdmin(false)
-  }
+ 
 
   const setInputs =()=>{
     setName('')
     setEmail('')
     setPassword('')
     setComfirmPassword('')
-    setOpacity('0')
-    setAdmin(false)
   }
 
   async function handleRegister(e){
@@ -36,7 +29,6 @@ export default function App(){
         email,
         password,
         comfirmPassword,
-        admin
     }
 
     try{
@@ -95,13 +87,6 @@ export default function App(){
                       value={comfirmPassword}
                       onChange={e => setComfirmPassword(e.target.value)}/>
             </InputFormBox>
-
-            <InputFormCheckboxCheckbox>
-              <InputFormCheckbox >
-                <Checkbox display={opacity} onClick={selectInputCheckbox}/>
-              </InputFormCheckbox>
-              <p>Sou administrador</p>
-            </InputFormCheckboxCheckbox>
             <button>Comfirmar cadastro</button>
           </form>
           <p>Já é membro ? <span>Login</span></p>
