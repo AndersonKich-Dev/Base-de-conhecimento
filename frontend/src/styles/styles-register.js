@@ -1,16 +1,21 @@
 import styled from 'styled-components'
 
 
-export const ViewLogin = styled.div`
+export const ViewRegister = styled.div`
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: #1A1D20;
     display: flex;
     align-items: center;
     padding: 0 80px;
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        padding: 0 40px;
+    }
 `;
 
-export const LoginFolder = styled.div`
+export const RegisterFolder = styled.div`
     width: 60%;
     height: 80%;
     display: flex;
@@ -26,16 +31,16 @@ export const LoginFolder = styled.div`
 `;
 
 
-export const LoginForm = styled.div`
+export const RegisterForm = styled.div`
     width: 40%;
     height: 80%;
-    background-color: #1C1E21;
+    background-color: ${props=>props.color};
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     border-radius: 10px; 
-    padding: 50px;
+    padding: 30px;
 
     form {
         width: 100%;
@@ -66,9 +71,18 @@ export const LoginForm = styled.div`
        
     }
 
-    span {
+    a:link 
+    { 
+    text-decoration:none; 
+    } 
+
+    strong {
          color: #4D61E0;
          cursor: pointer;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        padding: 20px;
     }
 `;
 
@@ -98,6 +112,13 @@ export const InputFormBox = styled.div`
     &:hover{
         border: 2px solid #4050AD;
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+       svg {
+            margin-left: 10px;
+       }
+    }
+    
 `;
 
 export const FormTitle = styled.div`
@@ -109,6 +130,7 @@ export const FormTitle = styled.div`
     flex-direction: column;
     
     h1 {
+        font-size: 1.8rem;
         text-transform: uppercase;
     }
    
@@ -116,6 +138,13 @@ export const FormTitle = styled.div`
        margin: 20px 0;
        font-size: 1.5rem;
    }
+
+   @media screen and (min-width: 768px) and (max-width: 1024px){
+    h1 {
+       font-size: 1.3rem;
+    }
+   }
+
 `;
 
 export const InputFormCheckboxCheckbox = styled.div`
@@ -180,6 +209,4 @@ export const Checkbox = styled.div`
         background-color: #fff;
     }
 `;
-
-
 

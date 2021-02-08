@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import image from './assets/te1.jpg'
-import { FaEnvelope, FaUser, FaLock } from "react-icons/fa";
-import { ViewLogin, LoginFolder, LoginForm, InputFormBox, FormTitle, InputFormCheckbox, Checkbox, InputFormCheckboxCheckbox} from './styles/styles'
-import Toastify from './services/Toastify'
-import api from './services/api'
+import image from '../assets/te1.jpg'
+import { FaEnvelope, FaUser, FaLock, FaTimes } from "react-icons/fa";
+import { ViewRegister, RegisterFolder, RegisterForm, InputFormBox, FormTitle, ModalRegister, BackIconModal, InputModalBox} from '../styles/styles-register'
+import Toastify from '../services/Toastify'
+import {Link , useHistory} from 'react-router-dom';
+import api from '../services/api'
 
 export default function App(){
 
@@ -11,15 +12,15 @@ export default function App(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [comfirmPassword, setComfirmPassword] = useState('')
+  const history = useHistory();
 
- 
-
-  const setInputs =()=>{
+  const clearInputsForms =()=>{
     setName('')
     setEmail('')
     setPassword('')
     setComfirmPassword('')
   }
+
 
   async function handleRegister(e){
     e.preventDefault();
@@ -32,34 +33,35 @@ export default function App(){
     }
 
     try{
-        const response = await api.post('/signup', data)
-           
+      const response = await api.post('/signup', data)
         Toastify({type:'success', message:'Parabens! Voce foi cadastrado com sucesso.'})
-        setInputs()
+        clearInputsForms()
+        history.push('/signin')
     }catch(err){
         Toastify({type:'error', message:`${err.response.data}`})
     }        
 
   }
 
+  
 
   return(
-    <ViewLogin>
-      <LoginFolder>
+    <ViewRegister>
+      <RegisterFolder>
         <img src={image} alt=''/>
-      </LoginFolder>
+      </RegisterFolder>
 
-      <LoginForm>
+      <RegisterForm color={'#1C1E21'}>
           <form onSubmit={handleRegister}>
             <FormTitle>
-                <h1>Base de Conhecimento</h1>
-                <p>Seja bem vindo</p>
+                <h1>KNOWLEDGE BASE</h1>
+                <p>Create Account</p>
             </FormTitle>
 
             <InputFormBox>
                <FaEnvelope/>
                <input type='email'
-                      placeholder='Digite seu e-mail'
+                      placeholder='E-mail'
                       value={email}
                       onChange={e => setEmail(e.target.value)}/>
             </InputFormBox>
@@ -67,7 +69,7 @@ export default function App(){
             <InputFormBox>
               <FaUser/>
               <input type='text'
-                      placeholder='Digite seu nome completo'
+                      placeholder='Username'
                       value={name}
                       onChange={e => setName(e.target.value)}/>
             </InputFormBox>
@@ -75,7 +77,7 @@ export default function App(){
             <InputFormBox>
               <FaLock/>
               <input type='password'
-                      placeholder='Digite sua senha'
+                      placeholder='Password'
                       value={password}
                       onChange={e => setPassword(e.target.value)}/>
             </InputFormBox>
@@ -83,15 +85,16 @@ export default function App(){
             <InputFormBox>
               <FaLock/>
               <input type='password'
-                      placeholder='Digite sua senha novamente'
+                      placeholder='Comfirme Password'
                       value={comfirmPassword}
                       onChange={e => setComfirmPassword(e.target.value)}/>
             </InputFormBox>
-            <button>Comfirmar cadastro</button>
+            <button>Submit</button>
           </form>
-          <p>Já é membro ? <span>Login</span></p>
-      </LoginForm>
+          <p>Already a member ? <Link to='/signin'><strong>Login</strong></Link></p>
+      </RegisterForm>
+    
        <Toastify/>
-    </ViewLogin>
+    </ViewRegister>
   )
 }

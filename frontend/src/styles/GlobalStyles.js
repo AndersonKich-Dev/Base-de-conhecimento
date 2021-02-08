@@ -22,9 +22,9 @@ export default createGlobalStyle`
    
   }
 
-  h1{
+  h1, h2{
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
-  
+    color: #fff; 
   }
 
   p{
