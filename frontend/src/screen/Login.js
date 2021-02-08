@@ -3,11 +3,12 @@ import Toastify from '../services/Toastify'
 import { ViewLogin, FormLogin, FormLoginTarja } from '../styles/styles-login'
 import api from '../services/api'
 import background from '../assets/loginBackground.jpg'
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 export default function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const history = useHistory();
 
     async function handleLogin(e){
         e.preventDefault();
@@ -23,7 +24,7 @@ export default function Login(){
             localStorage.setItem('token',`bearer ${ response.data.token}`);
             localStorage.setItem('admin', response.data.admin);
             
-            //history.push('/app/dashbord');
+            history.push('/app');
             
         }catch(err){
             Toastify({type:'error', message:`${err.response.data}`})
