@@ -77,11 +77,6 @@ export const FormLogin = styled.div`
             font-size:1rem;
         }
 
-        a:link 
-        { 
-        text-decoration:none; 
-        } 
-
         strong {
             color: #4D61E0;
             cursor: pointer;

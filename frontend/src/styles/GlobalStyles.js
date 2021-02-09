@@ -22,7 +22,12 @@ export default createGlobalStyle`
    
   }
 
-  h1, h2{
+  a:link 
+        { 
+        text-decoration:none; 
+        } 
+
+  h1, h2, h3{
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     color: #fff; 
   }

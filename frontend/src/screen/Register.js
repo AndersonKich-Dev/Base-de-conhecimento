@@ -3,7 +3,7 @@ import image from '../assets/te1.jpg'
 import { FaEnvelope, FaUser, FaLock, FaTimes } from "react-icons/fa";
 import { ViewRegister, RegisterFolder, RegisterForm, InputFormBox, FormTitle, ModalRegister, BackIconModal, InputModalBox} from '../styles/styles-register'
 import Toastify from '../services/Toastify'
-import {Link , useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import api from '../services/api'
 
 export default function App(){
@@ -12,7 +12,6 @@ export default function App(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [comfirmPassword, setComfirmPassword] = useState('')
-  const history = useHistory();
 
   const clearInputsForms =()=>{
     setName('')
@@ -36,7 +35,6 @@ export default function App(){
       const response = await api.post('/signup', data)
         Toastify({type:'success', message:'Parabens! Voce foi cadastrado com sucesso.'})
         clearInputsForms()
-        history.push('/signin')
     }catch(err){
         Toastify({type:'error', message:`${err.response.data}`})
     }        

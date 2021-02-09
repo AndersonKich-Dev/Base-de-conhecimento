@@ -24,7 +24,7 @@ export default function Login(){
             localStorage.setItem('token',`bearer ${ response.data.token}`);
             localStorage.setItem('admin', response.data.admin);
             
-            history.push('/app');
+            history.push('/app/dashboard');
             
         }catch(err){
             Toastify({type:'error', message:`${err.response.data}`})
