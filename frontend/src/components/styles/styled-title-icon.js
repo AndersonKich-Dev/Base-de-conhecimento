@@ -22,4 +22,10 @@ export const TitleIconContainer = styled.div`
         font-size: 2rem;
         color: #E3E4E4;
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 `;
