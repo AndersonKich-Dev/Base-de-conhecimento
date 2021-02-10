@@ -4,7 +4,7 @@ export const DashboardContainer = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #201F25;
     border-radius: 30px;
     display: flex;
     align-items: center;

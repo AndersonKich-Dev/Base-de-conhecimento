@@ -5,8 +5,8 @@ export const ContentContainer = styled.div`
     position: absolute;
     top: 50px;
     right: 0;
-    width:calc(100vw - 20vw);
+    width:calc(100vw - 10vw);
     height: calc(100vh - 120px);
-    background-color: #1A1D20;
-    padding: 20px;
+    
+    padding: 0 20px;
 `;

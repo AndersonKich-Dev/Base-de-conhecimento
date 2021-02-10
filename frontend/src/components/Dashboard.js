@@ -75,18 +75,18 @@ export default function Dashboard(){
             </Title>
 
             <ul>
-               <li style={{backgroundColor:'#5AA7FF'}}>
-                    <FaFolder/> 
+               <li>
+                    <FaFolder color={'#FFB948'}/> 
                     <p>{articles}</p>
                     <p>Artigos</p>  
                 </li> 
-               <li style={{backgroundColor:'#FFC065'}}>
-                   <FaFile/>
+               <li>
+                   <FaFile color={'#FD7268'}/>
                    <p>{categories}</p>
                    <p>Categorias</p>  
                 </li> 
-               <li style={{backgroundColor:'#6D56E8'}}>
-                   <FaUser/>
+               <li>
+                   <FaUser color={'#7C9CE5'}/>
                    <p>{users}</p>
                    <p>Usuarios</p>  
                 </li> 

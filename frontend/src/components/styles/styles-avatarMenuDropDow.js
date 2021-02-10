@@ -15,9 +15,10 @@ export const MenuDropDow = styled.ul`
         transition: all .3s ease-out;
         display: flex;
         align-items: center;
-        background-color: #394248;
+        background-color: #201F25;
+        border: 1px solid #06AE97;
+        border-radius: 10px;
         justify-content: flex-start;
-        border-radius: 5px;
     
         svg {
             font-size: 26px;

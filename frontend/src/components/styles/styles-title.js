@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const TitleContainer = styled.div`
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
     height: 80px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    background-color: red;
-    box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.75);
+    background-color: #16141F;
+    border-radius: 20px;
+    border: 2px solid #06AE97;
 `;

@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(36,45,52,0.9);
+    //background-color: rgba(36,45,52,0.9);
     
     h3{ 
         font-family: Arial, Helvetica, sans-serif;

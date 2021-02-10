@@ -7,5 +7,5 @@ export const FooterContainer = styled.div`
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #242D34;
+    //background-color: #242D34;
 `;
